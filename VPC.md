@@ -67,9 +67,12 @@ In this task, you launch an EC2 instance into the VPC. You configure the instanc
  
 ```
 #!/bin/bash
-# Install Apache Web Server
+sudo yum update -y
+#Install Apache Web Server
 sudo yum install httpd -y
 sudo systemctl start httpd
+sudo systemctl enable httpd
+echo "Hello World" > /var/www/html/index.html
 ```
 This script runs automatically when the instance launches for the first time. The script installs and starts an Apache web server.
 
